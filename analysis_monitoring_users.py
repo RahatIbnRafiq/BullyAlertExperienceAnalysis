@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import csv
 
 def print_collection_bullyalert():
-    filepath = constants.BULLYALERT_DATA_PATH+"//07.12.2018//instagram_monitoring_users.json"
+    filepath = constants.BULLYALERT_DATA_PATH+"/instagram_monitoring_users.json"
     data = utilities.read_json_data(filepath)
     num_private = 0
     num_public = 0
@@ -72,6 +72,6 @@ def print_collection_instagram_labeled():
     print("public: "+str(num_public))
         
 
-print_collection_instagram_labeled()
+print_collection_bullyalert()
 
 print("done")
