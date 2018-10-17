@@ -5,6 +5,7 @@ Created on Jul 12, 2018
 '''
 import json
 import requests
+import matplotlib.pyplot as plt
 
 
 def read_json_data(filepath):
@@ -36,3 +37,14 @@ def get_instagram_profile_webpage_json(username):
     content = content[index:]
     json_data = json.loads(content)
     return status_code,json_data["entry_data"]["ProfilePage"][0]["graphql"]["user"]
+
+
+def draw_pie_chart(data):
+    labels = [d[0] for d in data]
+    values =  [d[1] for d in data]
+    #explode = (0, 0.1, 0, 0) 
+    _, ax1 = plt.subplots()
+    ax1.pie(values,labels=labels, autopct='%1.1f%%',startangle=90)
+    ax1.axis('equal')  
+    plt.show()
+    
